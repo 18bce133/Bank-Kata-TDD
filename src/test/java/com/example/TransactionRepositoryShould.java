@@ -22,7 +22,7 @@ class TransactionRepositoryShould {
 
     @BeforeEach
     public void initialiseRepository(){
-        transactionRepository= new TransactionRepository();
+        transactionRepository= new TransactionRepository(clock);
     }
 
     @Test

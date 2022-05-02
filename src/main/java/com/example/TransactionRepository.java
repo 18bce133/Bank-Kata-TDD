@@ -1,11 +1,22 @@
 package com.example;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+
+import static java.util.Collections.unmodifiableList;
 
 
 public class TransactionRepository {
+    private final Clock clock;
+    List<Transaction> transactions= new ArrayList<>();
+
+    public TransactionRepository(Clock clock) {
+        this.clock = clock;
+    }
+
     public void addDeposit(int i) {
-        throw new UnsupportedOperationException();
+        transactions.add(new Transaction(clock.dateToString(),i));
     }
 
     public void Withdrawal(int i){
@@ -13,6 +24,6 @@ public class TransactionRepository {
     }
 
     public List<Transaction> allTransactions() {
-        throw new UnsupportedOperationException();
+        return unmodifiableList(transactions);
     }
 }
