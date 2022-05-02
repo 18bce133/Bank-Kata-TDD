@@ -12,7 +12,7 @@ public class Account {
 
     }
     public void withdraw(int money){
-        transactionRepository.Withdrawl(money);
+        transactionRepository.Withdrawal(money);
 
     }
     public void printStatement(){
