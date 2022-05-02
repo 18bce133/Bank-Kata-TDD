@@ -11,8 +11,15 @@ public class PrintStatement {
     @Mock
     private Print print;
 
+    private Account account;
+
     @Test
     public void printAllTransactions(){
+
+        account.deposit(1000);
+        account.withdraw(100);
+        account.deposit(500);
+        account.printStatement();
 
         verify(print).println("DATE | AMOUNT | BALANCE\n");
         verify(print).println("10/04/2014 | 500.00 | 1400.00\n");
