@@ -1,10 +1,14 @@
 package com.example;
 
 import org.junit.jupiter.api.Test;
-import static com.google.common.base.Verify.verify;
+import org.mockito.Mock;
+
+import static org.mockito.Mockito.verify;
+
 
 public class PrintStatement {
 
+    @Mock
     private Print print;
 
     @Test
