@@ -12,7 +12,7 @@ public class Account {
 
     }
     public void withdraw(int money){
-        throw new UnsupportedOperationException();
+        transactionRepository.Withdrawl(money);
 
     }
     public void printStatement(){

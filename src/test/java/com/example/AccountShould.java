@@ -21,9 +21,15 @@ class AccountShould {
 
     @Test
     public void deposit(){
-        account.deposit(100);
 
+        account.deposit(100);
         verify(transactionRepository).addDeposit(100);
+    }
+
+    @Test
+    public void withdrawl(){
+        account.withdraw(100);
+        verify(transactionRepository).Withdrawl(100);
     }
 
 }
