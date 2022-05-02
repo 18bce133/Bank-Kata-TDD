@@ -26,7 +26,7 @@ class TransactionRepositoryShould {
     }
 
     @Test
-    void deposit_Transaction()
+    void depositTransaction()
     {
         when(clock.dateToString()).thenReturn(currentDate);
         transactionRepository.addDeposit(100);
@@ -37,5 +37,15 @@ class TransactionRepositoryShould {
     }
     private Transaction transaction(String Date,int amount){
         return new Transaction(Date,amount);
+    }
+    @Test
+    void withdrawalTransaction(){
+
+        when(clock.dateToString()).thenReturn(currentDate);
+        transactionRepository.Withdrawal(100);
+        List<Transaction> transactions=transactionRepository.allTransactions();
+
+        Assertions.assertEquals(1, transactions.size());
+        Assertions.assertEquals(transactions.get(0),transaction(currentDate,-100));
     }
 }

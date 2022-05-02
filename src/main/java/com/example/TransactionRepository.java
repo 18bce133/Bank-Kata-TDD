@@ -20,7 +20,7 @@ public class TransactionRepository {
     }
 
     public void Withdrawal(int i){
-        throw new UnsupportedOperationException();
+        transactions.add(new Transaction(clock.dateToString(),-i));
     }
 
     public List<Transaction> allTransactions() {
