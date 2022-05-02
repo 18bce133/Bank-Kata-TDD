@@ -17,7 +17,8 @@ public class PrintStatement {
     private Account account;
     @BeforeEach
     private void accountInitialise() {
-        account = new Account();
+        TransactionRepository transactionRepository=new TransactionRepository();
+        account = new Account(transactionRepository);
     }
 
     @Test

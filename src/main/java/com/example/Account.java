@@ -1,8 +1,14 @@
 package com.example;
 
 public class Account {
+    private TransactionRepository transactionRepository;
+
+    public Account(TransactionRepository transactionRepository) {
+        this.transactionRepository = transactionRepository;
+    }
+
     public void deposit(int money){
-        throw new UnsupportedOperationException();
+        transactionRepository.addDeposit(money);
 
     }
     public void withdraw(int money){
