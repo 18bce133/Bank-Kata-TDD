@@ -1,5 +1,6 @@
 package com.example;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InOrder;
 import org.mockito.Mock;
@@ -14,6 +15,10 @@ public class PrintStatement {
     private Print print;
 
     private Account account;
+    @BeforeEach
+    private void accountInitialise() {
+        account = new Account();
+    }
 
     @Test
     public void printAllTransactions(){
