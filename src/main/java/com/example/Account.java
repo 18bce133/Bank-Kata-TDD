@@ -2,9 +2,11 @@ package com.example;
 
 public class Account {
     private TransactionRepository transactionRepository;
+    private StatementPrinter statementPrinter;
 
-    public Account(TransactionRepository transactionRepository) {
+    public Account(TransactionRepository transactionRepository, StatementPrinter statementPrinter) {
         this.transactionRepository = transactionRepository;
+        this.statementPrinter = statementPrinter;
     }
 
     public void deposit(int money){
@@ -16,6 +18,6 @@ public class Account {
 
     }
     public void printStatement(){
-        throw new UnsupportedOperationException();
+        statementPrinter.print(transactionRepository.allTransactions());
     }
 }

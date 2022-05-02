@@ -6,7 +6,6 @@ import org.mockito.InOrder;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 
-import static org.mockito.Mockito.verify;
 
 
 class PrintStatement {
@@ -15,10 +14,13 @@ class PrintStatement {
     private Print print;
 
     private Account account;
+
+
     @BeforeEach
     private void accountInitialise() {
         TransactionRepository transactionRepository=new TransactionRepository();
-        account = new Account(transactionRepository);
+        StatementPrinter statementPrinter=new StatementPrinter();
+        account = new Account(transactionRepository, statementPrinter);
     }
 
     @Test
