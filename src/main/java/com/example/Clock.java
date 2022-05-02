@@ -1,7 +1,7 @@
 package com.example;
 
-public class Transaction {
-    public Transaction(String date, int amount) {
+public class Clock {
+    public String dateToString() {
         throw new UnsupportedOperationException();
     }
 }

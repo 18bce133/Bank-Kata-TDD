@@ -42,7 +42,7 @@ class AccountShould {
 
     @Test
     void statementPrint(){
-        List<Transaction> transactions =asList(new Transaction());
+        List<Transaction> transactions =asList(new Transaction("12/05/2015",100));
         when(transactionRepository.allTransactions()).thenReturn(transactions);
         account.printStatement();
         verify(statementPrinter).print(transactions);
