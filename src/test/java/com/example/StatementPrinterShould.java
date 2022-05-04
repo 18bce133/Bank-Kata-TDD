@@ -18,8 +18,7 @@ public class StatementPrinterShould {
 
     @Test
     public void printHeader(){
-
-        StatementPrinter statementPrinter=new StatementPrinter();
+        StatementPrinter statementPrinter=new StatementPrinter(println);
         statementPrinter.print(Transactions);
         verify(println).println("DATE | AMOUNT | BALANCE");
     }

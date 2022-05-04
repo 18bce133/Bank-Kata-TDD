@@ -19,11 +19,11 @@ class PrintStatement {
     @Mock
     private Clock clock;
 
-
     @BeforeEach
     private void accountInitialise() {
+
         TransactionRepository transactionRepository=new TransactionRepository(clock);
-        StatementPrinter statementPrinter=new StatementPrinter();
+        StatementPrinter statementPrinter=new StatementPrinter(print);
         account = new Account(transactionRepository, statementPrinter);
     }
 
