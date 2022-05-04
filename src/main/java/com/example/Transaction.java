@@ -1,5 +1,7 @@
 package com.example;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.Objects;
 
 public class Transaction {
@@ -22,6 +24,12 @@ public class Transaction {
     @Override
     public int hashCode() {
         return Objects.hash(date, amount);
+    }
+    public int getAmount(){
+        return amount;
+    }
+    public String getDate(){
+        return date;
     }
 
 
